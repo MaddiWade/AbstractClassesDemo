@@ -10,9 +10,23 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
+            var vehicles = new List<Vehicle>();
+            
+            Car ford = new Car() { HasTrunk = true, Make = "Ford", Model = "Raptor", Year = "2018"};
+            Motercycle motercycle = new Motercycle() { HasSideCar = true, Year = "2020", Model = "Fast", Make = "Harley"};
+            Vehicle subaru = new Car() { Make = "Subaru", Model = "Forester", Year = "2017", HasTrunk = true };
+            Vehicle accord = new Car() { Make = "Honda", HasTrunk = true, Year = "2018", Model = "Accord" };
+
+            vehicles.Add(ford);
+            vehicles.Add(subaru);
+            vehicles.Add(accord);
+            vehicles.Add(motercycle);
+             
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"The Make {vehicle.Make} Model {vehicle.Model} Year {vehicle.Year}");
+                vehicle.DriveAbstract();
+            }
 
             #region Vehicles
 
